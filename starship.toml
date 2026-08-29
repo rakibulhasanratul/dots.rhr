@@ -1,0 +1,85 @@
+format = """$cmd_duration$username$directory$python$c$cpp$java$nodejs$rust$golang$git_branch$git_status$character"""
+
+[username]
+format = "[$user]($style) "
+style_user = "bold cyan"
+show_always = true
+
+[directory]
+format = "[$path]($style) "
+style = "bold green"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+symbol = " "
+style = "bold purple"
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "bold red"
+conflicted = "✗"
+ahead = "↑"
+behind = "↓"
+diverged = "↕"
+untracked = "?"
+stashed = "⚑"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[cmd_duration]
+format = "󰥔 [$duration\n]($style)"
+min_time = 2000
+style = "bold dimmed white"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[python]
+format = "[$symbol ]($style)([$virtualenv ](bold white))"
+style = "bold yellow"
+symbol = ""
+detect_files = []
+
+[nodejs]
+format = "[$symbol]($style)"
+symbol = " "
+style = "bold green"
+detect_files = ["package.json"]
+
+[rust]
+format = "[$symbol]($style)"
+symbol = " "
+style = "bold red"
+detect_files = ["Cargo.toml"]
+
+[golang]
+format = "[$symbol]($style)"
+symbol = " "
+style = "bold cyan"
+detect_files = ["go.mod"]
+
+[c]
+format = "[$symbol]($style)"
+symbol = " "
+style = "bold blue"
+detect_files = ["*.c", "*.h", "Makefile", "CMakeLists.txt"]
+detect_extensions = ["c", "h"]
+
+[cpp]
+format = "[$symbol]($style)"
+symbol = " "
+style = "bold blue"
+detect_files = ["*.cpp", "*.hpp", "*.cc", "CMakeLists.txt"]
+detect_extensions = ["cpp", "hpp", "cc", "cxx"]
+
+[java]
+format = "[$symbol]($style)"
+symbol = " "
+style = "bold red"
+detect_files = ["pom.xml", "build.gradle", "gradlew"]
+detect_extensions = ["java"]

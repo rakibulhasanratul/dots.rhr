@@ -1,0 +1,23 @@
+onboarding = false
+[theme]
+name = "terminal"
+auto_switch = false
+
+[ui.toast]
+delivery = "herdr"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+
+[keys]
+# Use j/k for workspace navigation in navigate mode (instead of arrow keys)
+navigate_workspace_up = "k"
+navigate_workspace_down = "j"
+
+# Zoom (maximize) the focused pane — also available as prefix+z by default
+# Added direct ctrl+alt+z shortcut for prefix-free access
+zoom = ["prefix+z", "ctrl+alt+z"]
+
+# Toggle sidebar collapse — also available as prefix+b by default
+# Added direct ctrl+alt+b shortcut for prefix-free access
+toggle_sidebar = ["prefix+b", "ctrl+alt+b"]

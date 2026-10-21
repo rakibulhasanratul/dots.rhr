@@ -61,7 +61,6 @@ alias oc=opencode
 alias n=nvim
 alias h=herdr
 alias lg=lazygit
-alias kitty="kitty --start-as fullscreen"
 
 # load starship
 starship init fish | source

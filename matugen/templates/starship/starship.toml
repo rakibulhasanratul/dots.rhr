@@ -1,0 +1,97 @@
+# Matugen dynamic color template for Starship prompt
+
+format = """$cmd_duration$username$directory$python$c$cpp$java$nodejs$rust$golang$git_branch$git_status$character"""
+palette = "matugen"
+
+[palettes.matugen]
+primary = "{{colors.primary.default.hex}}"
+secondary = "{{colors.secondary.default.hex}}"
+tertiary = "{{colors.tertiary.default.hex}}"
+error = "{{colors.error.default.hex}}"
+surface = "{{colors.surface.default.hex}}"
+text = "{{colors.on_surface.default.hex}}"
+subtext = "{{colors.on_surface_variant.default.hex}}"
+
+[username]
+format = "[$user]($style) "
+style_user = "bold fg:primary"
+show_always = true
+
+[directory]
+format = "[$path]($style) "
+style = "bold fg:secondary"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+symbol = " "
+style = "bold fg:tertiary"
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "bold fg:error"
+conflicted = "✗"
+ahead = "↑"
+behind = "↓"
+diverged = "↕"
+untracked = "?"
+stashed = "⚑"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[cmd_duration]
+format = "󰥔 [$duration\n]($style)"
+min_time = 2000
+style = "bold dimmed fg:subtext"
+
+[character]
+success_symbol = "[❯](bold fg:primary)"
+error_symbol = "[❯](bold fg:error)"
+
+[python]
+format = "[$symbol ]($style)([$virtualenv ](bold fg:text))"
+style = "bold fg:primary"
+symbol = ""
+detect_files = []
+
+[nodejs]
+format = "[$symbol]($style)"
+symbol = " "
+style = "bold fg:secondary"
+detect_files = ["package.json"]
+
+[rust]
+format = "[$symbol]($style)"
+symbol = " "
+style = "bold fg:error"
+detect_files = ["Cargo.toml"]
+
+[golang]
+format = "[$symbol]($style)"
+symbol = " "
+style = "bold fg:primary"
+detect_files = ["go.mod"]
+
+[c]
+format = "[$symbol]($style)"
+symbol = " "
+style = "bold fg:tertiary"
+detect_files = ["*.c", "*.h", "Makefile", "CMakeLists.txt"]
+detect_extensions = ["c", "h"]
+
+[cpp]
+format = "[$symbol]($style)"
+symbol = " "
+style = "bold fg:tertiary"
+detect_files = ["*.cpp", "*.hpp", "*.cc", "CMakeLists.txt"]
+detect_extensions = ["cpp", "hpp", "cc", "cxx"]
+
+[java]
+format = "[$symbol]($style)"
+symbol = " "
+style = "bold fg:error"
+detect_files = ["pom.xml", "build.gradle", "gradlew"]
+detect_extensions = ["java"]
